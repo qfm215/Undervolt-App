@@ -1,0 +1,25 @@
+7zxa.dll                Bibliothèque de décompression 7z
+Ace32Loader.exe      interface 64 bit pour UNACEV2.DLL 32 bit
+Default.SFX          Module SFX GUI RAR
+Default64.SFX        interface graphique 64 bit pour module RAR SFX
+Descript.ion          Description des fichiers
+File_Id.diz            Courte description
+License.txt           Licence pour l'utilisation et la distribution
+Order.htm            Informations d'enregistrement
+Rar.exe                Console RAR
+Rar.txt                  Manuel de la console RAR
+RarLng.dll             Ressources des langues
+RarExt.dll              Extension de l'environnement WinRAR
+RarFiles.lst            Ordre de tri pour les archives "Solide"
+ReadMe.txt           Aperçu rapide de WinRAR
+TechNote.txt         Description du format d'archive RAR
+Uninstall.exe         Programme de désinstallation
+Uninstall.lst           Liste des fichiers à désinstaller
+UnRAR.exe            Utilitaire freeware pour extraire les archives RAR
+WhatsNew.txt       Nouveautés de cette version
+WinCon.SFX           Module SFX pour la console RAR
+WinRAR.exe           WinRAR
+WinRAR.chm           Fichier d'aide de WinRAR
+Zip.SFX                   Module SFX GUI ZIP
+RarExt64.dll            Extension de l'interface de WinRAR pour Windows x64
+UNACEV2.DLL         Bibliothèque de décompression ACE

@@ -1,0 +1,1509 @@
+          WinRAR - Quelles sont les nouveautés de la dernière version ?
+
+   Version 5.60
+
+   1. L'apparence de WinRAR a évolué. 
+
+   Nous remercions les designers de http://weirdsgn.com 
+   et http://icondesignlab.com qui ont participé à cet effort et sommes fiers 
+   d'annoncer que WinRAR utilise le nouveau jeu d'icônes créé par 
+   Aditya Nugraha Putra de http://weirdsgn.com.
+
+   Les icônes WinRAR précédentes sont disponibles comme thème d'interface WinRAR 
+   https://rarlab.com/themes/WinRAR_Classic_48x36.theme.rar
+
+   2. L'efficacité de la commande "Réparer" a été améliorée pour l'enregistrement de 
+   récupération des archives RAR5 protégées. Elle permet désormais de détecter les suppressions 
+   et insertions de taille illimitée ainsi que les données aléatoires issues de plusieurs 
+   enregistrements de récupération d'archives protégées et fusionnées en un seul fichier dans 
+   un ordre arbitraire.
+
+   3. L'option d'archivage "Arrêter le PC une fois l'opération terminée" est remplacée 
+   par l'option "Une fois l'opération terminée" dans la liste déroulante. Vous pouvez 
+   donc arrêter votre PC, le mettre en veille prolongée ou le mettre en veille après un archivage.
+
+   4. Utilisez le commutateur de ligne de commande -ioff ou -ioff1 pour arrêter le PC, -ioff2 
+   pour le mettre en veille prolongée et -ioff3 pour le mettre en veille après une opération.
+
+   5. Si l'encodage du fichier de commentaires indiqué dans le commutateur -z<fichier> 
+   n'est pas défini avec le commutateur -sc, RAR tente de détecter le codage UTF-8, 
+   UTF-16LE et UTF-16BE en fonction du masque d'ordre d'octet et des tests de 
+   validité des données.
+
+   6. WinRAR tente de détecter automatiquement les encodages ANSI, OEM et UTF-8 
+   dans les commentaires d'archives ZIP.
+
+   7. L'option "Visionneuse interne/Utiliser le codage DOS" dans "Configuration/Visionneuse" 
+   est remplacée par "Visionneuse interne/Détection automatique de l'encodage". 
+   Si l'option "Détection automatique de l'encodage" est activée, la visionneuse interne 
+   tente de détecter les encodages ANSI (Windows), OEM (DOS), UTF-8 et UTF-16.
+
+   8. Normalement, lors d'un clic droit sur une seule archive, le menu contextuel de 
+   l'explorateur Windows ne contient que les commandes d'extraction. Vous pouvez modifier 
+   ce comportement en indiquant des masques séparés par des espaces dans l'option "Toujours afficher 
+   les éléments d'archivage pour" dans Configuration/Intégration/Rubriques des menus contextuels, 
+   de sorte que les commandes d'archivage soient toujours affichées pour ces types de fichiers, 
+   même si le fichier a été reconnu comme archive. Si vous souhaitez que les commandes d'archivage 
+   et d'extraction soient visibles pour toutes les archives, indiquez "*".
+
+   9. La commande "SetupCode" du module SFX accepte un paramètre d'entier facultatif permettant 
+   de contrôler le lien entre les codes d'erreur du programme d'installation et de SFX. 
+   Elle est également accessible via l'option "Ajustement du code de sortie" dans la 
+   boîte de dialogue "Options SFX avancées/Configuration".
+
+   10. Nouveau commutateur -im pour ligne de commande WinRAR "Afficher plus d'informations". 
+   Il peut être utilisé avec la commande t pour éditer un message en cas de réussite 
+   du test d'archive. Sans ce commutateur, la commande "t" se termine en silence si aucune 
+   erreur n'est trouvée.
+   Ce commutateur est applicable uniquement à WinRAR.exe et est ignoré par la console rar.exe.
+
+   11. Si un mot de passe incorrect est configuré lors de la décompression d'un fichier 
+   chiffré dans une archive ZIP, WinRAR propose de saisir un mot de passe valide pour ce fichier 
+   au lieu d'interrompre l'extraction.
+
+   12. Si un mot de passe incorrect est saisi lors de l'ouverture ou de la décompression 
+   d'une archive RAR contenant des noms de fichiers chiffrés, WinRAR propose de saisir 
+   un nouveau mot de passe valide au lieu d'annuler l'opération. Les versions antérieures 
+   le faisaient déjà pour des archives RAR avec des données de fichier chiffrées, mais abandonnaient 
+   pour les archives avec des noms de fichier chiffrés.
+
+   13. WinRAR reconnaît les fichiers GZIP avec des données arbitraires précédant une véritable archive 
+   GZIP, ex. les fichiers de microprogramme .scexe.
+
+   14. Le paramètre @filelist peut être spécifié dans la section "Fichiers à ajouter" de la boîte 
+   de dialogue d'archivage. Dans ce cas WinRAR tente de lire la liste des fichiers d'archivage à partir 
+   de 'filelist', qui devrait être en texte brut, avec un seul nom de fichier par ligne.
+
+   15. Boîte de dialogue d'information :
+       a) Graphique du taux de compression graphique mis à jour ;
+       b) "Noms et données" est affiché dans la section "Chiffrement" pour les archives contenant 
+	  des noms de fichiers chiffrés.
+
+   16. Le nom complet de l'archive est affiché lorsque le pointeur est positionné sur un nom 
+   de fichier d'archive dans la fenêtre de progression de l'opération. Il peut être utile si 
+   le nom de l'archive est trop long et ne convient pas à l'espace disponible dans la fenêtre.
+
+   17. Si le commutateur -ts1 est utilisé avec l'option -u ou -f, une comparaison d'heure de 
+   fichier est effectuée avec une précision d'1 seconde. Précédemment, un fichier ajouté pouvait 
+   à tort être considéré comme plus récent que l'archivage. En effet, la comparaison se basait 
+   sur l'heure haute précision du fichier ajouté et sur l'heure basse précision de l'archivage.
+
+   18. Les commandes "Mettre à jour" et "Actualiser" ('u' et 'f' en mode ligne de commande) 
+   s'arrêtent immédiatement quand aucun fichier ne doit être mis à jour. Auparavant, elles 
+   créaient une archive temporaire avant de s'arrêter sur les archives avec enregistrement de 
+   récupération ou avec des informations d'ouverture rapide.
+
+   19. Une invite est affichée après création de 500 volumes depuis l'interface WinRAR. 
+   L'utilisateur peut continuer ou arrêter l'archivage. Le but est d'éviter la création de 
+   plusieurs milliers de volumes lorsqu'une taille de volume erronée est saisie.
+
+   20. WinRAR utilise des mégaoctets au lieu des octets comme unité par défaut dans 
+   le champ de taille du volume de la boîte de dialogue d'archivage.
+
+   21. La commande "Réparer" émet un message "L'enregistrement de restauration est corrompu"
+   après réparation d'une archive RAR5 contenant un enregistrement de restauration défaillant. 
+   Auparavant ce message n'était émis que par la commande "Test". "Réparer" traitait la 
+   plupart des enregistrements de récupération endommagés en silence.
+
+   22. Bogues corrigés :
+       a) résolu les problèmes potentiels de sécurité lors du traitement d'archives RAR corrompues ;
+       b) les caractères non anglais dans les fichiers TAR avec en-têtes PAX étendus n'étaient 
+	  pas affichés correctement;
+       c) la commande "rar x arcname.rar .." décompressait les fichiers dans le dossier en cours 
+	  au lieu de son parent ;
+       d) le fait de coller des fichiers depuis la fenêtre de l'explorateur Windows vers une archive 
+	  ouverte dans WinRAR bloquait les opérations de copier/coller suivantes dans l'explorateur 
+          jusqu'à la fin de l'archivage ;
+       e) le module SFX affichait le message "Le mot de passe indiqué n'est pas correct" indéfiniment. 
+	  Il ne demandait pas un mot de passe correct ;
+       f) les heures des dossiers étaient toujours définies lors de l'extraction des archives ZIP même 
+	  si les options "Heure des fichiers" étaient désactivées dans la boîte de dialogue d'extraction ;
+       g) si "Supprimer l'archive : toujours" était sélectionné durant l'extraction et si l'utilisateur 
+	  cliquait sur "Annuler" sur l'invite d'écrasement du fichier ou de saisie de mot de passe, 
+	  une archive pouvait être supprimée, même après annulation de l'extraction pour les fichiers .zip et .7z.
+
+   Version 5.50
+
+   1. WinRAR et la ligne de commande RAR utilisent le format d'archive RAR 5.0 par défaut.
+      Vous pouvez choisir le format compatible RAR 4.x avec l'option "RAR4"
+      dans la boîte de dialogue d'archivage ou avec le commutateur de ligne de commande -ma4.
+      
+      Si vous préférez le format RAR 4.x par défaut, utilisez le bouton "Créer le profil par défaut..."
+      sur la page "Compression" des paramètres WinRAR et sélectionnez "RAR4"
+      dans la fenêtre qui s'affiche.
+
+      Ce changement affecte uniquement les nouvelles installations. Si vous avez déjà enregistré
+      le format RAR dans le profil de compression par défaut pour les versions précédentes,
+      WinRAR respecte les paramètres enregistrés.
+   
+   2. Utilisez la commande « Définir le mot de passe maître » dans la boîte de dialogue 
+      « Organiser les mots de passe » pour chiffrer les mots de passe enregistrés et les protéger contre 
+      les accès non autorisés.
+ 
+      Si les mots de passe enregistrés sont protégés par mot de passe maître, vous devez saisir ce mot de passe 
+      et cliquer sur le bouton « OK » dans l'invite de mot de passe pour y accéder. Si le mot de passe saisi ne 
+      correspond pas au mot de passe maître, il est traité en tant que mot de passe classique pour les opérations 
+      d'archivage.
+
+      Une fois saisi, le mot de passe maître est valable jusqu'à la fermeture de WinRAR. Fermez WinRAR et 
+      démarrez-le à nouveau après avoir spécifié le mot de passe maître si vous souhaitez voir comment 
+      la protection fonctionne. Saisissez un mot de passe valide puis un mot de passe vide pour supprimer le 
+      chiffrement des mots de passe protégés.
+
+      Cette version de WinRAR utilise un nouveau format de données pour organiser les mots de passe. Les mots 
+      de passe stockés dans la boîte de dialogue « Organiser les mots de passe » ne sont pas lisibles par les 
+      anciennes versions. Cela n'affecte en rien les formats de chiffrement d'archives. Les archives chiffrées sont 
+      compatibles avec les versions précédentes de WinRAR. Les données de l'organiseur ne sont pas converties 
+      dans un nouveau format immédiatement après l'installation de WinRAR. Elles le sont uniquement lorsque 
+      vous les enregistrez.
+
+   3. L'invite proposant de définir le mot de passe maître est affiché durant l'enregistrement d'un mot de passe 
+      dans le profil de compression. Vous pouvez saisir le mot de passe maître pour chiffrer les données de mot de 
+      passe stockées dans la base de registre et les protéger contre les accès non autorisés. Par la suite, vous 
+      devrez saisir le mot de passe maître dans l'invite afin d'accéder aux options du profil de compression.
+
+      Une fois saisi, le mot de passe maître est valable jusqu'à la fermeture de WinRAR. Fermez WinRAR et 
+      démarrez-le à nouveau après avoir spécifié le mot de passe maître si vous souhaitez voir comment la 
+      protection fonctionne.
+
+   4. Par défaut, WinRAR utilise AES-256 en mode CTR pour chiffrer les archives ZIP. Bien qu'AES-256 soit 
+      considérablement plus sûr que l'algorithme de chiffrement de base de ZIP 2.0, il peut s'avérer incompatible 
+      avec des logiciels de décompression plus anciens. Lorsqu'une compatibilité avec de tels outils est 
+      nécessaire, vous pouvez activer « Chiffrement ZIP » dans la boîte de dialogue de mot de passe, ou utiliser 
+      le commutateur -mezl en mode ligne de commande.
+ 
+   5. Ajout de la prise en charge de l'extraction des archives .LZ créées par le compresseur Lzip.
+
+   6. Les outils TAR modernes peuvent stocker les heures de fichiers en haute précision, des noms de fichiers 
+      longs et des fichiers volumineux dans des en-têtes étendus PAX à l'intérieur de l'archive TAR. Désormais, 
+      WinRAR prend en charge ces en-têtes PAX et les utilise lors de l'extraction des archives TAR.
+
+   7. La nouvelle option « Stocker l'heure de modification » de la page « Heure » dans la boîte de dialogue 
+      d'archivage peut être utilisée pour interdire de stocker l'heure de modification dans les archives RAR 5.x. 
+      L'option « Heure de modification précise » est remplacée par « Format d'heure haute précision ».
+
+   8. Nouvelle option « Chemins complets dans la barre de titre » dans la boîte de dialogue « Paramètres/Général ». 
+      Lorsqu'elle est activée, le chemin complet du dossier actuellement ouvert ou de l'archive est affiché dans la 
+      barre de titre de WinRAR.
+
+   9. La nouvelle page « Paramètres/Archives » comprend un groupe d'options « Types de fichiers à ouvrir en tant 
+      qu'archives ». Vous pouvez y indiquer comment la touche Entrée ou le double clic sur un fichier ne portant 
+      pas une extension d'archive doivent être traités dans la liste des fichiers WinRAR. Par exemple : les 
+      fichiers .docx ou les archives auto-extractibles .exe. Vous pouvez indiquer à WinRAR d'ouvrir ces fichiers 
+      comme des archives, de les exécuter, de les traiter de la même façon ou différemment à l'intérieur et à 
+      l'extérieur des archives, de ne jamais exécuter les types de fichiers indiqués même s'ils n'incluent aucun 
+      contenu archivé.
+
+      Les paramètres par défaut sont destinés à ouvrir une archive auto-extractible exe et à exécuter les autres 
+      types d'archives dont l'extension n'est pas celle d'une archive.
+
+      Quelles que soient ces options, vous pouvez toujours ouvrir ces archives en appuyant sur Ctrl+Page Suivante 
+      sur le nom dans la liste de fichiers WinRAR.
+
+  10. La nouvelle commande « Copier les noms complets dans le presse-papiers » du menu « Fichier » place 
+      les noms complets des fichiers sélectionnés dans le presse-papiers.
+
+  11. Cette commande est également ajoutée au menu contextuel qui s'affiche lorsque vous cliquez avec le bouton 
+      droit sur la liste de fichiers dans WinRAR. 
+     
+      a) Plusieurs autres commandes, également présentes dans la barre d'outils ou dans le menu principal, 
+         par exemple « Afficher » et « Réparer », ont été supprimées de ce menu contextuel ;
+      
+      b) La commande Copier les noms complets dans le presse-papiers a été ajoutée ;
+
+      c) Les commandes "Exécuter", "Ouvrir dans l'application associée" et
+         "Afficher le contenu de l'archive" ont été ajoutées. Elles permettent de sélectionner
+         la façon dont les archives SFX et les fichiers portant une extension autre que celle d'une archive
+         sont traités.
+    
+         Ces éléments ne sont présents qu'en mode gestion de fichiers et ne sont pas disponibles dans les
+         archives. 
+ 
+  12. LZ et ZIPX ont été ajoutés à la liste des associations dans la boîte de dialogue Paramètres/Intégration.
+
+  13. Les extensions de fichiers LZ et ZIPX ont été ajoutées à liste de formats par défaut pour le commutateur 
+      -ms (Indiquer les types de fichier à stocker) invoqué sans paramètres.
+
+  14. Vous pouvez indiquer le jeu de caractères « f » dans le commutateur -sc afin d'utiliser l'encodage UTF-8. 
+      Par exemple :
+
+      rar a -scfl arcname @filelist.txt
+
+      pour lire le contenu de filelist.txt en tant que texte UTF-8.
+
+  15. Les commandes RAR « lt » et « vt » permettent d'afficher les heures des fichiers avec une précision 
+      d'une nanoseconde. Une telle précision est utilisée dans les archives RAR5 créées par RAR/Unix 5.50 et 
+      plus récents. Les archives créées par WinRAR ont une précision d'heure de fichier de 100 ns.
+
+  16. À l'heure actuelle, seuls les modificateurs de précision '+', '-' et '1' sont pris en charge dans le 
+      commutateur -ts. Utilisez '+' pour stocker l'heure de fichier avec une précision maximale, '-' pour 
+      omettre l'heure du fichier et '1' pour stocker avec précision d'1 seconde. Les modes de précision 
+      intermédiaires définis précédemment avec les modificateurs '2' et '3' ne sont pas disponibles dans le 
+      format d'archive RAR 5.0 et sont ignorés par le commutateur -ts.
+
+  17. Si un mot de passe incorrect est configuré lors de la décompression d'un fichier chiffré dans une 
+      archive RAR5, WinRAR propose de saisir un mot de passe valide pour ce fichier au lieu d'interrompre 
+      l'extraction.
+
+  18. Les informations du chemin d'accès sont affichées lorsque le pointeur est positionné sur un nom de 
+      fichier d'archivage dans la fenêtre de progression de l'opération.
+
+  19. Le nom du profil de compression actif est affiché dans la boîte de dialogue d'archivage au-dessus 
+      du bouton « Profils... ».
+
+  20. Si la commande « Rechercher » est appelée à l'intérieur du sous-dossier d'archive, 
+      « Noms de fichiers à rechercher » inclura le chemin de ce sous-dossier. « Rechercher » n'effectuera 
+      la recherche qu'à partir de ce sous-dossier.
+
+  21. Bogues corrigés :
+
+      a) résolution de problèmes et d'une faille de sécurité durant l'extraction
+         d'archives RAR corrompues ;
+
+      b) WinRAR ne parvenait pas à décompresser les fichiers des archives ZIP compressées avec l'algorithme XZ 
+         et les chiffrées avec AES ;
+
+      c) si l'option « Barres de progression Windows » était activée dans la configuration de WinRAR et si le 
+         mode d'archivage « Placer chaque fichier dans des archives séparées » était utilisé, la partie dorée 
+         de la barre de progression n'affichait pas correctement le taux de compression des données ;
+
+      d) la progression de l'extraction des archives SFX était incorrecte pour les archives SFX dont 
+         la taille totale était supérieure à 4 Go ;
+
+      e) si les noms des dossiers archivés comprenaient des espaces à la fin, si l'utilisateur sélectionnait et 
+         extrayait certains des dossiers dans le dossier d'archive autre que la racine, et si l'option d'extraction 
+         « Autoriser les noms potentiellement incompatibles » était désactivée, WinRAR pouvait perdre un ou 
+         plusieurs caractères au début ou à la fin du nom du dossier ;
+
+      f) si uniquement l'heure de création ou uniquement l'heure de dernier accès au fichier était stockée dans 
+         une archive RAR5 avec une précision d'1 seconde, comme avec les commutateurs -ma5 -tsm- -tsa1, cette 
+         heure était ignorée lors de l'extraction.
+
+   Version 5.40
+
+   1. Le sous-menu "Encodage des noms" du menu "Options" permet de sélectionner l'encodage des 
+      noms des fichiers archivés. Cette sélection affecte la consultation des archives et 
+      les commandes d'extraction. Vous pouvez utiliser le raccourci clavier Ctrl+E pour accéder 
+      à ce menu rapidement.
+
+      Il peut être utile lors de la décompression d'une archive sans nom de fichier Unicode.
+
+      Par exemple, la décompression d'un fichier zip avec des noms de fichiers archivés en chinois 
+      dans Windows avec le russe indiqué en tant que langue pour les programmes non Unicode.
+
+   2. Si les volumes de récupération RAR (fichiers .rev) sont présents dans le même dossier que les volumes 
+      RAR, la commande de test d'archive vérifie le contenu du .rev après avoir terminé les tests 
+      des fichiers .rar.
+
+      Si vous souhaitez tester uniquement les fichiers .rev sans vérifier les volumes .rar, vous pouvez 
+      sélectionner les fichiers .rev dans la liste de fichiers WinRAR et y appliquer "Test" ou exécuter :
+
+         rar t arcname.part1.rev
+
+         dans la ligne de commande.
+
+   3. Alors que le système de fichiers NTFS autorise les noms de fichier avec des espaces de fin et des points, 
+      beaucoup de programmes Windows ne parviennent pas à traiter de tels noms correctement. Si l'option 
+      "Autoriser les noms potentiellement incompatibles" dans la page "Avancé" du dialogue d'extraction est 
+      désactivée, WinRAR supprime les espaces de fin et, le cas échéant, les points des noms de fichiers lors 
+      de l'extraction.
+
+      Cette option est désactivée par défaut.
+
+      La ligne de commande RAR supprime également les espaces de fin et les points lors de l'extraction, 
+      sauf si le commutateur -oni est spécifié.
+
+   4. Auparavant le mode de mise à jour "Synchroniser le contenu des archives" (commutateur de ligne de 
+      commande -as) était annulé quand certains des dossiers d'archivage étaient illisibles. WinRAR 
+      continue désormais l'opération et préserve les dossiers illisibles des fichiers archivés.
+
+   5. La commande de suppression WinRAR Maj+Suppr peut être utilisée pour supprimer des dossiers 
+      contenant des noms de fichiers non standard avec des espaces de fin et des points.
+
+      Dans les précédentes versions de WinRAR l'envoi dans la corbeille avec Maj+Suppr n'était pas 
+      possible pour ces dossiers.
+
+      Contrairement à la commande Suppr, Maj+Suppr supprime des fichiers de façon permanente. 
+      Ils ne sont pas déplacés dans la corbeille. Aucune invite supplémentaire n'est affichée pour les 
+      fichiers en lecture seule et les attributs système.
+
+   6. Vous pouvez glisser des dossiers depuis le panneau de l'arborescence et les déposer dans 
+      d'autres programmes ou sur bureau pour copier ou décompresser. Faites glisser l'icône de l'archive 
+      à la racine du panneau d'arborescence pour décompresser l'archive dans son intégralité.
+
+   7. Le bouton "Nouveau dossier" dans le dialogue d'extraction propose un nom de nouveau dossier 
+      basé sur le nom de l'archive au lieu de "Nouveau Dossier".
+
+   8. Informations de version de RAR en ligne de commande :
+
+      a) si le commutateur -iver est indiqué, RAR affiche le numéro de version et se ferme. 
+         Vous pouvez simplement exécuter "RAR -iver" ;
+
+      b) "x86" ou "x64" s'affiche dans l'information de version RAR Windows avec -iver et 
+         dans le titre du droit d'auteur pour les autres commandes.
+
+   9. Si le commutateur -p est utilisé sans le paramètre <pwd> facultatif, un mot de passe peut 
+      également être défini avec la redirection de fichier.
+
+      Par exemple : rar -p myarc.rar myfiles < psw.txt
+
+  10. La ligne de commande RAR traite 'arcname partN" comme "arcname.partN.rar' si 'arcname.partN' 
+      n'existe pas et 'arcname.part#.rar' existe.
+
+      Par exemple, il est possible d'exécuter :
+
+      RAR x arcname.part01
+
+      pour démarrer l'extraction depuis arcname.part01.rar
+
+  11. Améliorations dans la prise en charge des archives 7z :
+
+      a) L'état "solide" est correctement détecté et rapporté pour les archives 7z dans la 
+         commande "Info" de WinRAR ;
+
+      b) la taille du dictionnaire s'affiche pour les archives LZMA et LZMA2 7z dans la 
+         commande "Info" de WinRAR ;
+
+      c) la taille compressée inconnue des fichiers solides 7z est indiquée par '?' au lieu de '0' 
+         lorsque vous parcourez le contenu de l'archive dans WinRAR.
+
+  12. La longueur maximale des commentaires d'archives RAR est passée de 64 à 256 Ko.
+
+      Étant donné que les commandes de script SFX sont stockées dans le commentaire d'archive, 
+      il est possible d'utiliser une texte principal et un texte de licence plus long dans les archives SFX.
+
+  13. La taille de police par défaut de l'afficheur WinRAR est mise à l'échelle correctement dans le 
+      mode haute résolution de Windows.
+
+  14. Le commutateur -scul peut être utilisé pour traiter les fichiers de liste UTF-16 Big Endian,
+      à condition qu'ils soient dotés de l'indicateur d'octet adéquat. Précédemment, seuls les fichiers
+      de liste Little Endian étaient autorisés.
+
+  15. La version minimale de Windows est Windows XP SP3.
+
+      WinRAR ne s'exécutera pas dans Windows XP sans les Service Packs.
+
+  16. L'option "Paramètres/Liste de fichiers/Accepter les noms en majuscules" a été supprimée.
+
+      Cette option est destinée à simplifier la transition entre MS DOS et Windows et n'est plus nécessaire.
+
+  17. Bogues corrigés :
+
+      a) La commande "Compresser et envoyer par e-mail" de WinRAR 5.31 x64 ne fonctionnait pas 
+         avec Microsoft Outlook x64 ;
+
+      b) si WinRAR 5.31 dans une langue de droite à gauche était installé dans Windows avec 
+         l'anglais ou d'autres langues système autres que droite à gauche, WinRAR pouvait changer 
+         la disposition de l'Explorateur Windows en droite à gauche ;
+
+      c) si l'archive était stockée dans un dossier sans autorisation en "écriture" et si le contenu 
+         de l'archive était extrait par glisser-déposer vers un dossier inscriptible, WinRAR émettait 
+         une invite d'élévation de privilèges inutile.
+   
+
+   Version 5.31
+
+   1. Les problèmes suivants ont été résolus dans Windows en mode haute résolution :
+
+      a) si la taille de texte définie dans les paramètres de Windows était de 150 % ou plus,
+         la taille du texte dans l'aide de WinRAR n'augmentait pas comme attendu,
+         affichant le texte dans une taille trop petite ;
+
+      b) la largeur par défaut des colonnes dans les fichiers de listes de WinRAR était inférieure
+         au réglage de 125 % ou plus.
+
+   2. Amélioration de l'interface pour les langues de droite à gauche :
+
+      a) alignement correct du texte dans les invites de WinRAR comme les
+         confirmations de suppression de fichiers d'archives ou pour vider le fichier journal ;
+
+      b) les boutons "OK", "Annuler", "Aide" dans les dialogues sur plusieurs pages,
+         comme les options d'archivage et d'extraction ou les paramètres de WinRAR,
+         sont alignés correctement et traduits en fonction de la langue d'affichage par défaut de Windows.
+
+   3. Bogues résolus :
+
+      a) le module WinRAR SFX pouvait charger les bibliothèques DLL depuis le dossier
+         de son propre exécutable suite à un appel de fonctions d'API Windows.
+         Cela pouvait présenter un risque lorsque des fichiers DLL contenant du code malveillant
+         étaient stockés dans le même dossier que l'archive SFX. Désormais le module SFX
+         applique des étapes supplémentaires pour éviter de telles situation sur Windows Vista
+         et version ultérieure.
+
+         Il est à noter que les utilisateurs n'ayant pas installé les dernières mises à jour de sécurité de Windows
+         ainsi que les utilisateurs de Windows XP peuvent toujours être affectés. Ils doivent donc
+         veiller particulièrement à exécuter les arhives SFX depuis un dossier
+         ne contenant aucune DLL suspecte ;
+      
+      b) WinRAR 5.30 ne parvenait pas à exécuter les fichiers .lnk du fichier de liste.
+
+   Version 5.30
+
+   1. Les informations relatives à la vulnérabilité critique dans les archives auto-extractibles
+      WinRAR récemment publiées dans la presse sont incorrectes. Malheureusement
+      les média n'ont pas noté que ce qui était présenté comme une vulnérabilité de WinRAR
+      était en fait une vulnérabilité de Windows OLE corrigée en novembre 2014 :
+
+      https://technet.microsoft.com/en-us/library/security/ms14-064.aspx
+
+      Même sans correctif, cette vulnérabilité de Windows n'introduit aucun
+      nouveau risque pour les archives SFX de WinRAR.
+
+      Voir http://rarlab.com/vuln_sfx_html2.htm pour plus de détails.
+
+      Aucun correctif n'est requis pour WinRAR.
+
+   2. Ajout de l'extraction d'arhives ZIP multiples créées avec 7-Zip.
+      Les extensions de ces archives sont .zip.001, .zip.002, ...
+      Vous devez ouvrir le fichier .zip.001 dans l'environnement WinRAR pour consulter
+      ou décompresser ce type d'archives. Toutes les parties doivent se trouver dans le même dossier
+      avant l'extraction.
+
+   3. Ajout de l'extraction de fichiers fractionnés en plusieurs parties portant l'extension .001,
+      .002, ..., Vous pouvez ouvrir le fichier .001 comme une archive classique
+      puis décompresser son contenu. WinRAR combinera toutes les parties
+      et enregistrera les fichiers extraits. Toutes les parties doivent se trouver
+      dans le même dossier avant l'extraction.
+
+      L'élément "001" est inclus à la liste "Associeravec WinRAR"
+      dans la boîte de dialogue "Configuration/Intégration".
+         
+   4. La liste de fichiers WinRAR permet d'utiliser le bouton précédent et suivant de la souris
+      ou le raccourci clavier Alt+Gauche et Alt+Droit pour naviguer
+      dans les dossiers consultés récemment.
+
+   5. Les caractères génériques de dossiers sont autoriés en ligne de commande RAR dans les noms de fichiers
+      à archiver. Par exemple :
+
+      rar a backup c:\backup\2015*\*
+
+      archivera tous les dossiers '2015*' dans c:\backup. Utilisez le commutateur -r pour rechercher
+      '2015*' également dans les sous-dossiers de c:\backup.
+
+   6. Le bouton "Extraire" de l'archive SFX affiche "Pause" une fois l'extraction
+      commencée. Il est donc possible d'interrompre momentanément l'extraction SFX et de la
+      reprendre plus tard.
+
+   7. L'option "Ignorer chiffré" dans "Rechercher des fichiers" pour ignorer
+      les archives chiffrées sans avertissement pendant une commande de recherche.
+   
+   8. La commande de test d'archive fonctionne pour les archives tar.gz, tar.bz2 et tar.xz.
+      Le format TAR ne proposant pas de somme de contrôle des données, WinRAR vérifie
+      uniquement la validité des conteneurs GZIP, BZIP2 et XZ.
+   
+   9. L'ajout d'une nouvelle chaîne dans la fenêtre de diagnostic de WinRAR pouvait
+      être lent et pouvait affecter les performances en présence de milliers
+      d'erreurs. L'opération est désormais rapide, peu importe le nombre d'erreurs.
+
+  10. Le nouvel objet 'R' du commutateur -sc définit l'encodage des messages de console
+      RAR envoyés à des fichiers et pipelines redirigés . Par exemple :
+
+      rar lb -scur data > list.txt
+
+      permettra d'obtenir un fichier list.txt Unicode contenant la liste des fichiers archivés.
+
+  11. Le paramètre de temps d'attente du commutateur -ri<priorité>[:<temps_d_attente>] est
+      ajusté au niveau le plus bas afin de minimiser son impact sur les performances de RAR performance, 
+      en particulier pour pour les opérations de récupération d'enregistrement. Un temps d'attente plus long
+      est nécessaire pour réduire la charge système au même niveau que les versions précédentes
+
+  12. Les commande de console RAR "l" et "v" affichent la date des fichiers eu format YYYY-MM-DD.
+
+  13. Durant l'extraction d'archives RAR et ZIP créées dans Unix, WinRAR associe
+      les caractères Unicode décomposés aux précomposés. Cette conversion
+      est requise pour que certaines archives Unix et OS X puissent décompresser correctement
+      des nom non-anglais dans Windows. Cette option fonctionne à partir de Windows Vista.
+
+  14. L'heure de modification est définie pour tous les dossiers créés durant la décompression
+      des archives .7z. Les versions précédentes ne le faisaient que pour les fichiers non-vides.
+
+  15. WinRAR empêche l'ordinateur de passer en veille en cas d'inactivité jusqu'à ce que
+      l'opération (archivage, extraction ou autre processus d'archivage) ne soit terminée.
+
+  16. La barre de progression totale est affichée durant l'extraction des archives .arj, .lzh and .cab
+      (sauf pour les archives multivolumes).
+
+  17. La barre de progression est affichée durant la suppresion des fichiers après archivage
+      et durant l'effacement de l'attribut "Archive" des fichiers archivés.
+
+  18. La commande "Test" permet également de vérifier le contenu de flux de données alternatifs NTFS
+      dans les archives RAR 3.x - 5.x. Auparavant, leur contenu n'était vérifié
+      que durant l'extraction.
+
+  19. Le module SFX définit la variable d'environnement sfxstime qui contient l'heure
+      de démarrage du module au format "YYYY-MM-DD-HH-MM-SS-ms".
+      Vous pouvez l'indiquer dans la commande Path lorsque vosu souhaitez générer l'heure
+      en fonction d'un chemin d'installation, par exemple "Path=myapp-%sfxstime%".
+
+  20. Bogues résolus :
+
+      a) la console RAR s'arrêtait au lieu d'afficher un invite de remplacement
+         quand un fichier était déjà présent dans un volume ;
+
+      b) la commande de console RAR "lt" n'affichait pas les secondes dans l'horodatage des fichiers ;
+
+      c) WinRAR ne parvenait pas à décompression les fichiers .xxe quand leur corps ne contenait pas la
+         chaîne "section N of xxencode" ;
+
+      d) WinRAR ne pouvait pas restaurer le contenu des flux de données alternatifs NTFS 
+         enregistrés avec le commutateur -os et séparés en différents volumes.
+
+
+
+   Version 5.21
+
+   1. Les options "Menu contextuel du glisser-déposer" de la boîte de dialogue 
+      "Paramètres/Intégration/Eléments de menu contextuel" permettent de désactiver 
+      les commandes d'archivage et d'extraction de WinRAR dans le menu affiché après 
+      un glisser-déposer à l'aide du bouton droit de la souris.
+
+   2. Si le fichier winrar.ini est présent dans le même dossier que l'installateur WinRAR,
+      winrar.ini est copié dans le dossier du programme WinRAR à la fin de 
+      l'installation.
+
+   3. Les versions précédentes pouvaient parfois produire des volumes RAR5 légèrement
+      plus petits que prévu. Ce phénomène est moins fréquent maintenant. Dans la plupart 
+      des cas, la taille des volumes correspond à celle demandée par l'utilisateur.
+
+   4. Désormais, par défaut, WinRAR ignore les liens symboliques avec des chemins absolus
+      dans la cible du lien lors de l'extraction. Vous pouvez activer la création de tels liens
+      avec l'option "Autoriser les chemins absolus dans les liens symboliques" sur la page "Avancé"
+      de la boîte de dialogue d'extraction ou avec le commutateur de ligne de commande -ola.
+
+      Les liens pointant vers des dossiers extérieurs au dossier de destination de l'extraction 
+      peuvent présenter un risque de sécurité. N'activez leur extraction que si vous êtes 
+      certain que le contenu des archives est sûr, comme votre propre sauvegarde.
+   
+   5. Bogues résolus :
+
+      a) WinRAR 5.20 affichait une fenêtre de contrôle de compte utilisateur (UAC) inutile
+         quand un exécutable était lancé depuis une archive située dans un dossier protégé 
+         par l'UAC. Dans la mesure où rien n'est extrait dans ce cas, la fenêtre UAC 
+         n'est pas utile ;
+
+      b) WinRAR pouvait écraser des fichiers en lecture seule uniquement
+         durant la décompression de formats RAR et ZIP. La fonction est maintenant 
+         active pour les autres formats pris en charge par WinRAR ;
+
+      c) "Temps écoulé" et "Temps restant" étaient affichés de façon erronée
+         lorsque la commande "Convertir" était appliquée à plusieurs archives
+         et quand l'option "Ajouter l'enregistrement de restauration" était active.
+
+
+   Version 5.20
+
+
+  1. Si le contrôle de compte utilisateur Windows empêche les commandes d'extraction ou d'archivage de créer 
+     des fichiers dans les dossiers système protégés, WinRAR tente de démarrer une autre copie avec des privilèges 
+     d'administrateur pour terminer l'opération. Il est nécessaire de confirmer l'élévation des privilèges dans l'invite du contrôle 
+     de compte utilisateur pour que la seconde copie de WinRAR fonctionne.
+
+  2. Vous pouvez faire glisser des fichiers dans l'explorateur avec le bouton droit de la souris, les déposer dans un dossier 
+     et sélectionner les commandes d'archivage WinRAR dans le menu contextuel pour créer une archive de ces fichiers 
+     dans le dossier de destination.
+
+  3. Il est possible d'utiliser un fichier WinRAR.ini au lieu du Registre pour stocker les paramètres de WinRAR. Vous préférerez 
+     peut-être cette approche si vous prévoyez d'installer WinRAR sur un support amovible, comme une clé USB, en vue 
+     de l'exécuter sur différents ordinateurs.
+     Pour plus de détails, consultez la rubrique « Fichier WinRAR.ini » du chapitre « Paramètres de configuration » de l'aide WinRAR.
+
+  4. Ajout de la prise en charge de l'extraction d'archives ZIP et ZipX en utilisant l'algorithme de compression XZ.
+
+  5. Si une archive ZIP ou ZIPX contient des algorithmes de compression autre que « Store » ou « Deflate » , les noms de 
+     l'algorithme sont affichés dans le champ « Version à extraire » de la boîte de dialogue d'information de l' archive. 
+     Les algorithmes dont WinRAR ne connait pas les noms seront nommés « m<num> », où « num » est un identifiant numérique 
+     de l'algorithme de compression.
+
+  6. La commande Ouvrir avec WinRAR est disponible dans les menus contextuels de Windows pour les formats d'archive 
+     pris en charge par WinRAR. Elle peut être désactivée avec l'option « Ouvrir avec WinRAR (pour les archives usuelles) » dans 
+     la boîte de dialogue WinRAR « Paramètres/Intégration/Éléments des menus contextuels... ».
+
+  7. RAR en ligne de commande peut lire l'ensemble des commutateurs par défaut dans le fichier rar.ini stocké dans le dossier 
+     du programme RAR. Auparavant, il était possible de définir uniquement un même ensemble de commutateurs pour toutes 
+     les commandes RAR avec des chaînes « switches=<commutateurs> ». Désormais, rar.ini permet également de spécifier des jeux 
+     de commutateurs séparés pour chaque commande RAR en utilisant la syntaxe suivante :
+			switches_<command>=<tous les commutateurs RAR, séparés par des espaces>
+      Par exemple :
+			switches_a=-m5 -s switches_x=-o+
+
+  8. La commande « ch » prend également en charge les commutateurs -tl, -cu, -cl pour les archives ZIP. Auparavant « ch » 
+     autorisait ces commutateurs uniquement pour le format d'archive RAR.
+
+  9. Pour les formats d'archives ne disposant pas d'information d'heure de fichier, comme .bz2, .xz et .Z, WinRAR définit 
+     une heure de modification pour les fichiers extraits. Ceci ne s'applique pas aux formats tar.bz2, tar.xz et tar.Z, pour lesquels 
+     l'heure du fichier est stockée dans les en-têtes tar.
+ 
+  10. L'option « Conserver les fichiers altérés » est prise en charge pour les archives bzip2.
+
+  11. L'icône de WinRAR dans les menus contextuels Windows est agrandie correctement en mode d'affichage 150 % ou 200 % 
+      par exemple.
+
+  12. Il est possible de désactiver la commande « Test de performances » de WinRAR grâce à la variable « Benchmark » de la clé de 
+      Registre HKEY_CURRENT_USER\Software\WinRAR\Policy. Dans un environnement multi-utilisateur, la commande "Test des 
+      performances" pourrait abuser des ressources partagées. Pour plus de détails, consultez la rubrique 
+      « Variables base de registres » du chapitre « Configuration » de l'aide WinRAR.
+
+  13. En plus de la variable « sfxcmd » contenant la ligne de commande entière, le module SFX définit la variable « sfxpar » contenant 
+      les paramètres de ligne de commande uniquement, sans le nom du module SFX. Ces variables sont définies avant de démarrer 
+      un programme spécifié dans la commande « Configuration ».
+
+  14. L'invite de remplacement de fichier dans la console RAR affiche la taille et l'heure de modification des fichiers actuels et nouveaux.
+
+  15. Lors de l'archivage de stdin avec le commutateur -si , RAR définit l'heure actuelle du système sur l'heure de modification 
+      du fichier archivé. La version précédente n'ajoutait pas cette heure.
+
+  16. Il est possible d'utiliser les commutateurs -si et -v<taille> simultanément. Les versions précédentes ne permettaient pas 
+      de créer des volumes lors de l'archivage de stdin.
+
+  17. Un avertissement est émis au début de la décompression de fichiers supérieurs à 4 Go depuis une archive RAR ou ZIP sur 
+      une partition FAT32. L'utilisateur peut ainsi annuler l'opération. FAT32 ne prend pas en charge les fichiers de cette taille.
+      En outre, cet avertissement est émis au début de la création d'archives RAR avec la méthode « Stocker » (-m0) lorsque la taille 
+      de l'archive est estimée à 4 Go ou plus.
+
+  18. le bouton « Sélectionner tout » de la boîte de dialogue « Paramètres/Intégration » est renommé « Basculer tout ». 
+      Il permet désormais de désélectionner les formats d'archive lorsqu'ils sont déjà sélectionnés.
+
+  19. L'option d'extraction « Supprimer l'archive » supprime correctement tous les volumes zip et .7z. Auparavant, elle ne supprimait 
+      que le premier volume de la série de ces formats d'archives.
+
+
+   Version 5.11
+
+   1. WinRAR peut décompresser les archives TAR contenant des dossiers avec en-têtes étendus pax. 
+      Les versions précédentes ne pouvaient pas décompresser ce contenu.
+
+   2. L'option d'extraction "Conserver les fichiers altérés" est prise en charge pour les archives 7-Zip.
+
+   3. Bogues corrigés :
+
+      a) WinRAR 5.10 ne définissait pas les attributs de fichier "masqué", "en lecture seule" et "système" 
+         lors de la décompression d'archives ZIP ;
+
+      b) WinRAR 5.10 ne pouvait pas mettre à jour les archives RAR auto-extractibles contenant des archives ZIP 
+         imbriquées sans compression ;
+
+      c) Une archive ZIP créé avec l'option "Ne pas stocker les chemins d'accès" incluait des noms d'enregistrements 
+         vides pour les dossiers ;
+
+      d) Les fichiers archivés pouvaient présenter un décalage d'heure de modification d'1 heure dans Windows XP ;
+
+      e) La suppression d'un fichier dans une archive solide RAR5 contenant des fichiers stockés avec le commutateur -ver 
+         entraînait la perte des informations de version de ces fichiers ;
+
+      f) Des rectangles noirs étaient affichés au lieu des boutons de barre d'outils en mode 16 et 24 bits et pour les tailles 
+         de texte Windows personnalisées supérieures à 100 %.
+
+
+Version 5.10
+
+   1. Ajout de la prise en charge de l'extraction des archives ZIP et ZIPX avec
+      compression BZIP2, LZMA et PPMd.
+
+   2. Ajout de la prise en charge de l'extraction des archives 7z séparées
+      (.7z.001, .7z.002, ...).
+
+   3. Ajout de la prise en charge des instructions AES-NI CPU permettant d'améliorer
+      les performances du chiffrement et du déchiffrement RAR.
+
+   4. Les images du thème par défaut ont été agrandies pour une meilleure qualité d'affichage
+      en mode haute définition.
+
+   5. Les variables d'environnement comme %temp% peuvent être utilisées
+      dans le champ "Fichiers à ajouter" de la boîte de dialogue d'archivage.
+
+   6. Le commutateur -ai peut être utilisé durant la création d'une archive RAR.
+      Les valeurs prédéfinies, typiques pour les dossiers et les fichiers,
+      sont stockées à la place des attributs.
+      Ce commutateur n'était jusqu'ici disponible que pour l'extraction.
+
+Version 5.01
+
+   1. Les archives RAR 5.0 peuvent inclure des informations d'ouverture rapide
+      contrôlées par le commutateur -qo[-|+] ou les options du groupe "Informations d'ouverture rapide"
+      dans la boîte de dialogue d'archivage. Cette option permet d'ouvrir le contenu des archives
+      plus rapidement dans WinRAR.
+
+      Cette version apporte une amélioration à la mise à jour des archives
+      contenant des informations d'ouverture rapide et des enregistrements de service,
+      par exemple la sécurité des fichiers NTFS. De plus, les paramètres par défaut
+      des informations d'ouverture rapide ont été optimisés pour une ouverture plus rapide de
+      ces archives.
+
+   2. Bogues résolus :
+
+      a) la commande "Rechercher" ne fonctionnait pas toujours dans les archives .7z ;
+
+      b) durant l'ouverture d'archives RAR 5.0 avec noms de fichiers chiffrés stockés
+         dans une autre archive, WinRAR affichait parfois un message erroné
+         indiquant un mot de passe incorrect. Cela ne se produisait que lorsque les mots
+         de passe des archives externes et internes étaient différents. L'extraction n'était pas affectée.
+         Tous les fichiers étaient extraits ;
+
+      c) l'option "Utiliser pour toutes les archives" de la boîte de dialogue des mots de passe
+         ne supprimait pas les demandes supplémentaires pour les archives RAR 5.0 avec noms de fichiers
+         chiffrés ;
+
+      d) la barre d'adresse de WinRAR ne traitait pas correctement les chemins basés
+         sur des variables d'environnement, comme %temp% ;
+
+      e) le stockage des sécurités de fichiers NTFS et d'autres flux de données ne fonctionnait pas
+         pour les chemins composés de plus de 260 caractères ;
+
+      f) la commande "Test" signalait parfois des données endommagées dans un enregistrement
+         de restauration valide uniquement quand une partie des fichiers d'une archive RAR 5.0
+         était testée. Cela ne se produisait pas lorsque l'intégralité de l'archive était testée ;
+
+      g) la commande "Test" signalait des erreurs durant la vérification
+         des liens symboliques RAR 4.x Unix ;
+
+      h) la commande "Afficher" de WinRAR ne fonctionnait pas pour les ficheirs présents dans 
+         des archives BZIP2 ;
+
+      i) si l'option "Heure de modification précise" était désactivée dans la boîte de dialogue d'archivage,
+         WinRAR ne stockait pas l'heure de modification au lieu d'enregistrer l'heure précise ;
+
+      j) les chemins de destination contenant .\ ou ..\ ne fonctionnaient pas
+         durant l'extraction d'archives non-RAR en mode de ligne de commande ;
+
+      k) WinRAR ne pouvait pas décompresser les archives CAB multivolumes.
+
+
+Version 5.00
+
+1. Nouveau format d'archivage RAR 5.0. Vous pouvez utiliser l'option "RAR 5.0" dans la boîte de dialogue d'archivage ou le paramètre de ligne de commande -ma pour créer des archives RAR 5.0. Des logiciels plus anciens, y compris les anciennes versions de WinRAR ne sont pas en mesure de décompresser les archives RAR 5.0. Si vous envisagez d'envoyer une archive à d'autres personnes, il est donc nécessaire de prendre en considération le problème de compatibilité. Vous pouvez sélectionner "RAR" au lieu de l'option "RAR5" dans la boîte de dialogue pour créer des archives RAR 4.x compatibles avec les versions précédentes de WinRAR.
+
+2. Changements dans l'algorithme de compression RAR 5.0 :
+a) la taille maximale du dictionnaire de compression a été augmentée jusqu'à 1 Go dans WinRAR 64 bits. La version 32 bits de WinRAR peut utiliser jusqu'à 256 Mo lors de la création d'une archive. Les versions 32 bits et 64 bits peuvent décompresser les archives, quelle que soit la taille du dictionnaire, y compris 1 Go ;
+b) la taille de dictionnaire par défaut pour RAR 5.0 est de 32 Mo, ce qui permet des taux de compression plus élevés et une vitesse inférieure à RAR 4.x 4 Mo. Vous pouvez utiliser l'option "Taille du dictionnairee" du dialogue d'archivage ou le commutateur -md pour modifier cette valeur ;
+c) la syntaxe du commutateur -md a été modifiée pour prendre en charge des dictionnaires de plus grande taille. Ajoutez les modificateurs "k", "m" et "g" pour définir la taille en kilooctets, mégaoctets et gigaoctets, par exemple, -md64m pour un dictionnaire de 64 Mo. En l'absence de modificateurs, on suppose qu'il s'agit de mégaoctets, donc -md64m est égal à -md64 ;
+d) le format RAR 5.0 inclut l'exécutable Intel IA-32 et les algorithmes de compression delta. Les algorithmes texte, audio, vraie couleur et Itanium de RAR 4.x ne sont pas pris en charge. Les algorithmes exclus ne sont pas efficaces pour le matériel et les types de données actuels ;
+configurations;
+e) la décompression RAR 5.0 peut utiliser plusieurs cœurs de processeur. Mais pas dans la même mesure que dans l'algorithme de compression. Il améliore la vitesse de décompression des gros fichiers contenant des données peu compressibles, ou lors de l'utilisation des sommes de contrôle BLAKE2.
+
+3. Changements dans le format d'archive RAR 5.0 :
+a) l'heure des fichiers est stockée en temps universel coordonné (UTC) au lieu de l'ancienne heure locale. Il est désormais plus simple d'échanger der fichiers entre plusieurs fuseaux horaires ;
+b) les noms des fichiers et les commentaires d'archives utilisent le codage UTF-8.
+
+4. L'enregistrement de récupération RAR 5.0 est basé sur les codes de correction d'erreur Reed-Solomon. Si la taille de l'enregistrement de récupération est suffisamment élevée (5 et plus), le nouveau système de correction d'erreur offre une bien meilleure résistance par rapport à l'enregistrement de récupération RAR 4.x. Les enregistrement plus petits, comme 1-2, ou les types de dommages inférieurs entraînerait moins de différences entre 4.x et 5.0. Pour un seul dommage continu, l'efficacité de 4.x et 5.0 est sensiblement la même.
+Outre les suppressions de données habituelles, le nouvel enregistrement de récupération est capable de détecter les suppressions et les insertions d'une taille bien plus importante que dans les versions précédentes de RAR. La taille maximale d'insertion est de plusieurs mégaoctets. La taille maximale de suppression dépend du type de dégâts et dans certains cas peut être aussi grande que l'enregistrement de récupération. Toutefois, l'absence de suppressions et d'insertions garantissent des performances et une efficacité accrues. Dans ce cas, toutes les données, y compris les secteurs endommagés, conservent leurs positions d'origine. Ainsi, si vous utilisez un logiciel spécial pour copier une archive à partir de supports endommagés, il est préférable de choisir le mode, quand les secteurs endommagés sont remplacés par des zéros ou toute autre donnée, au lieu de les supprimer complètement du fichier final.
+L'enregistrement de récupération RAR 5.0 est plus résistant aux dommages de l'enregistrement de récupération. Il peut même utiliser un enregistrement de récupération partiellement corrompu. Notez cependant que la commande "Réparer" ne répare pas les blocs endommagés dans l'enregistrement de récupération. Seules les données de fichier sont corrigées. Après réparation des archives, vous devrez peut-être créer un nouvel enregistrement de récupération pour les fichiers enregistrés.
+Le nouvel enregistrement de récupération n'est plus basé sur des secteurs de 512 octets. Il intègre désormais des structures de données plus complexes. Il est donc impossible d'indiquer sa taille en secteurs. Pour les archives RAR 5.0, le paramètre de commutateur -rr[N] et la commande rr[N] sont toujours traités comme un pourcentage de la taille de l'archive, indépendamment de la présence de caractères. En général N enregistrements de récupération permettent de réparer jusqu'à N données contigües endommagées. La taille de l'archive augmente légèrement plus que N. La capacité à réparer des dommages multiples est proportionnelle à N.
+Nous avons utilisé l'article "Screaming Fast Galois Field Arithmetic Using Intel SIMD Instructions" de James S. Plank, Kevin M. Greenan et Ethan L. Miller pour améliorer les performances de codage Reed-Solomon. Nous adressons également nos remerciements à Artem Drobanov et Bulat Ziganshin pour les exemples et les idées qui ont permis d'accroître l'efficacité du codage Reed-Solomon.
+
+5. La commande "Test" permet de vérifier la validité de l'enregistrement de récupération RAR 5.0. L'enregistrement de récupération est testé après avoir traité tous les fichiers archivés.
+Si l'archive corrompue contient l'enregistrement de la récupération, il serait possible de la réparer même en cas d'échec du test de validité de l'enregistrement de récupération. La commande "Réparation" tente d'utiliser un record de récupération, même lorsqu'il est partiellement endommagé. Il faut donc considérer le résultat d'enregistrement de récupération négatif comme une bonne raison pour recréer l'archive si les fichiers d'origine sont encore disponibles. Ce n'est en aucun cas une raison pour éviter la commande "Réparer".
+
+6. Changements dans l'algorithme de chiffrement RAR 5.0 :
+a) l'algorithme de chiffrement AES-128 est remplacé par AES-256 en mode CBC.
+mode. La fonction de dérivation de clé est basée sur PBKDF2 et utilise HMAC-SHA256 ;
+b) la valeur de vérification de mot de passe spéciale permet de détecter la plupart des mauvais mots de passe sans nécessité de décompresser le fichier dans son intégralité ;
+c) si les en-têtes d'archives ne sont pas chiffrés (l'option "Chiffrer les noms de fichier" est désactivée), les sommes de contrôle des fichiers RAR 5.0 chiffrés sont modifiées à l'aide d'un algorithme de mot de passe spécial dépendant, rendant impossible de deviner le contenu en se basant sur les sommes de contrôle des fichiers. Ces sommes de contrôle de fichier chiffrés ne correspondent pas forcément aux valeurs standard de CRC32 et BLAKE2.
+
+7. Les archives RAR 5.0 permettent d'utiliser un hash BLAKE2sp de 256 bits (https://blake2.net) au lieu d'une somme de contrôle de fichier CRC32 32 bits. Activez l'option "Utilisser la somme de contrôle BLAKE2" dans la page "Options" de la boîte de dialogue d'archivage ou insérez le commutateur de ligne de commande -htb pour utiliser les sommes de contrôle BLAKE2.
+Bien que produisant des archives légèrement plus volumineuses, BLAKE2 peut être utilisé pour l'identification du contenu des fichiers. Si deux fichiers présentent la même valeur BLAKE2, il est quasi-certain que le contenu du fichier est le même. La propriété de détection d'erreurs BLAKE2 est également plus forte que dans les CRC32 bien plus courts.
+
+8. Fonctionnalités supprimées :
+a) la fonctionnalité de vérification d'authenticité n'offrait pas le niveau de fiabilité requis et a été supprimée ; b) le commutateur -en (ne pas ajouter le bloc "fin d'archive") n'est pas pris en charge par les archives RAR 5.0 qui ont toujours un bloc de fin d'archive. Ce bloc permet à WinRAR d'ignorer en toute sécurité les données externes comme les signatures numériques ajoutées à l'archive ;
+c) l'ancien style d'extension de noms de volume arcname.rNN n'est pas prise en charge par els archives RAR 5.0. Ces dernières utilisent uniquement les noms de volumes arcname.partN.rar ; d) les commentaires de fichiers ne sont plus pris en charge dans les archives RAR 4.x et 5.0. La commande de console RAR "cf" a été supprimée. Elle n'affecte pas la prise en charge des commentaires d'archives, présente dans les deux versions du format d'archive. Il n'est pas prévu de la supprimer.
+
+9. La commande "Définir le mot de passe" et l'option "Taille du dictionnaire" sont déplacées vers la page "Général" de la boîte de dialogue d'archivage.
+
+10. Vous pouvez utiliser l'option "enregistrer les liens symboliques sous forme de liens" dans la page "Avancé" de la boîte de dialogue d'archivage pour enregistrer et restaurer les liens symboliques NTFS et analyser de nouveau les points comme des liens, de sorte que leur contenu ne soit pas archivé. L'équivalent en ligne de commande de cette option est le commutateur -ol.
+Une option similaire pour les liens durs NTFS est "Enregistrer les liens durs comme des liens". Son équivalent de ligne de commande est -oh.
+Les deux options sont disponibles uniquement pour le format d'archive RAR 5.0.
+
+11. Prise en charge du format d'archive XZ en extraction uniquement.
+
+12. Changements dans le traitement du volume de récupération du format d'archive RAR 5.0 :
+a) le nombre maximal de volumes RAR+REV au format RAR 5.0 est de 65 535 au lieu de 255 ;
+b) les opérations de volume de récupération sont plus rapides que dans RAR 4.x ;
+c) outre la récupération des données, les fichiers RAR 5.0 REV stockent également les informations de service tels que les sommes de contrôle des fichiers RAR protégés. Ils sont donc légèrement plus volumineux que les volumes RAR qu'ils protègent. Si vous envisagez de copier des fichiers RAR et REV individuels sur un support amovible, vous devez en tenir compte et spécifier une taille de volume RAR inférieure de quelques kilo-octets à celle du support.
+
+13. La longueur maximale du chemin d'accès des fichiers dans les archives RAR et ZIP est passée à 2 048 caractères.
+
+   14. Lorsqu'elle détecte que l'utilisateur a saisi un mauvais mot de passe, la ligne de commande RAR 
+       renvoie le code de sortie 11. Ce code ne peut être émis que pour les archives RAR 5.0. 
+       Il est impossible de distinguer un dommage d'un mot de passe erroné pour les archives RAR 4.x.
+
+   15. Les commandes "v" et "l" affichent les noms des fichiers archivés à la fin de la ligne, 
+       et non au début comme c'était le cas auparavant. De plus, certains champs précédemment disponibles 
+       dans les sorties 'l'et 'v' sont désormais indiqués seulement par 'lt' et 'vt'. 
+       Les commandes 'vt' et 'lt' fournissent les informations détaillées sur plusieurs lignes 
+       pour chaque fichier archivé.'vta' et 'lta' répertorient également les en-têtes des services.
+
+   16. Désormais, le jeu de caractères par défaut pour les listes de fichiers de commandes de type 
+       'rar a arcname @filelist' est ANSI pour la console RAR et WinRAR. Dans les versions précédentes, 
+       ANSI était utilisé pour WinRAR et OEM pour la console RAR. Vous pouvez utiliser le commutateur 
+       -scl pour substituer cette valeur par défaut.
+
+   17. La visionneuse interne de WinRAR peut détecter et afficher les fichiers en codage UTF-8 
+       et UTF-16 Little Endian.
+
+   18. Le codage UTF-16 Little Endian est utilisé dans les journaux rar.log de RAR et WinRAR. 
+       Les noms de fichiers Unicode sont donc stockés correctement dans le journal. 
+       WinRAR tronque automatiquement l'ancien fichier rar.log au format non Unicode 
+       pour éviter de mélanger différents codage dans un même fichier journal. 
+       Dans le cas de la console RAR, vous devez supprimer l'ancien rar.log manuellement. 
+       Dans le cas contraire, RAR ajoutera les messages UTF-16 au fichier rar.log existant.
+
+   19. La commande de ligne de commande "r" (réparation) peut inclure un paramètre facultatif 
+       destpath\ permettant de définir le dossier de destination de l'archive réparé : rar 
+       r archive.rar destpath\
+
+
+   Version 4.20
+
+   1. Modifications dans la compression RAR:
+
+	a) l'algorithme de compression général RAR est optimisé pour une meilleure 
+	utilisation de plusieurs cœurs de processeur. Bien qu'il soit possible d'améliorer 
+	la vitesse, même en mode monoprocesseur, les meilleurs résultats sont obtenus dans 
+	les environnement à plusieurs cœurs.
+
+	Le gain de vitesse dépend du type de données et de la taille moyenne des fichiers.
+	Plusieurs cœurs sont utilisées plus efficacement lors de la compression des fichiers.
+
+	b) nous avons dû augmenter la mémoire requise pour atteindre une meilleure vitesse 
+	de compression. L'algorithme de compression général RAR allouè environ 120 Mo contre 
+	40 Mo dans WinRAR 4.11 ;
+
+	c) l'algorithme de compression texte RAR ne peut pas utiliser plusieurs cœurs de 
+	processeur efficacement. Ses performances en environnement multiprocesseur sont donc 
+	beaucoup plus faible que pour l'algorithme général. En outre sa vitesse de décompression 
+	est beaucoup plus faible que dans l'algorithme général quel que soit nombre de processeurs.
+	Nous avons donc décidé de désactiver l'algorithme de texte par défaut.
+
+	Si vous avez besoin d'un taux de compression maximal pour les données de texte, 
+	quelle que soit la vitesse, vous pouvez activer la compression texte dans la boîte de dialogue 
+	« Paramètre de compression avancés ». Pour y accéder, cliquez sur le bouton « Compression... » 
+	de la page « Avancé », dans la boîte de dialogue d'archivage. Vous pouvez également modifier 
+	cette option de façon permanente dans le profil de compression par défaut ;
+
+	Dans le mode ligne de commande la compression texte peut être activée à l'aide du 
+	commutateur -mct ;
+
+	d) le mode de compression « Plus rapide » (-m1) prend également en charge plusieurs cœurs 
+	de processeur. Dans la version 4.11 il ne pouvait utiliser qu'un seul cœur de processeur.
+
+   2. la vitesse de l'algorithme de décompression général RAR a été améliorée, mais pas à la 
+      même mesure que pour la compression RAR. La décompression RAR ne peut pas utiliser 
+      plusieurs cœurs de processeur.Ses performances ne dépendent donc pas de nombre de cœurs.
+   
+   3. Changements dans la compression ZIP :
+
+	a) la compression ZIP prend désormais en charge plusieurs cœurs de processeur. Il en résulte 
+	des performances bien meilleures dans les environnements à plusieurs cœurs. La compression ZIP 
+	avec un seul processeur est également plus rapide que dans la version 4.11 ;
+
+	b) l'utilisation de la mémoire pour la compression ZIP a été augmentée d'environ 15 Mo.
+
+   4. La création de volume de restauration et le traitement peuvent utiliser plusieurs cœurs de processeur. 
+      La vitesse s'en trouve améliorée. Bien que la vitesse de disques durs soit un facteur limitant 
+      pour les volumes de restauration, ce gain est plus perceptible sur les disques SSD.
+
+   5. La valeur <threads> du commutateur -mt<threads> est désormais comprise entre 1 et 32, 
+      et non plus entre 0 et 16 comme auparavant.
+
+   6. La commande « Rechercher des fichiers » permet de rechercher des données dans des archives 7-Zip.
+      La fonction « Rechercher des fichiers » ne prenait pas en charge la recherche dans les archives 
+      au format .7z.
+
+   7. Windows 2000 n'est plus pris en charge par WinRAR et les modules auto-extractible WinRAR.
+
+   8. Le bouton "Enregistrer les paramètres actuels" de la boîte de dialogue "Options SFX avancées"
+      est désormais disponible uniquement pour la conversion d'archives en SFX.
+      Les options enregistrées à l'aide de ce bouton ne sont appliquées qu'aux conversions SFX.
+
+      Si vous créez une archive SFX ou que vous la mettez à jour, seules les options SFX stockées
+      dans le profil de compression par défaut sont utilisées. Les options enregistrées
+      dans la boîte de dialogue "Options SFX avancées" sont ignorées durant ces opérations.
+
+
+   Version 4.11
+
+   1. Bogues résolus :
+
+      a) WinRAR ne stockait pas l'attribut NTFS "Compressé" durant 
+         la création d'archives RAR ;
+
+      b) WinRAR arrêtait de fonctionner en mode ligne de commande quand le paramètre @filelist 
+         était présent et que 'filelist' n'existait pas. Ce bogue n'affectait que
+         WinRAR.exe, pas RAR.exe ;
+
+      c) lorsque le masque d'exclusion -x*\répertoire\* n'était pas défini durant l'archivage
+         et que le nom du dossier actuel contenait 'répertoire', 
+         WinRAR excluait tous les fichiers et interrompait la création de l'archive ;
+
+      d) Les archives auto-extractibles avec interface graphique ne fonctionnaient pas dans 
+         Windows PE (Preinstallation Environment).
+
+
+   Version 4.10
+
+   1. WinRAR peut créer des archives ZIP de n'importe quelle taille.
+
+      Les limites ZIP de 2 Go et 65535 fichiers des versions précédentes de
+      WinRAR ne sont plus d'actualité.
+
+   2. WinRAR peut créer des archives ZIP multivolumes, également appelées
+      fichiers ZIP fractionnés.
+
+      Les volumes ZIP portent des noms de type 'nom_vol.zip', 'nom_vol.z01', 'nom_vol.z02'.
+      Utilisez un volume ".zip" pour toutes les opérations de traitement d'archives telle que 
+      le lancement d'une extraction ou l'ouverture d'une archive.
+
+      Contrairement aux volumes RAR, les ZIP ne peuvent pas être auto-extractibles.
+
+      Pour la création ou la décompression, WinRAR doit pouvoir accéder à tous les volumes ZIP
+      d'un ensemble multivolume. Il n'est donc pas possible de créer ou de décompresser des volumes
+      ZIP stockés sur des disques amovibles, à raison d'un volume par support.Vous devez les créer 
+      tous dans le même dossier.
+
+   3. Ajout de la prise en charge de l'heure de haute précision dans les archives ZIP.
+      WinRAR peut stocker et extraire les heures de modification, de création et de dernier 
+	  accès des archives ZIP avec une précision de l'ordre de 100 nanosecondes.
+	  
+	  Vous devez activer l'option "Heure de modification précise" dans la section "Heure" de la boîte 
+	  de dialogue d'archivage pour stocker les 3 heures dans l'archive.
+	  Définissez les options appropriées "Heure fichier" dans la section "Avancé" de la boîte de 
+	  dialogue d'extraction pour choisir les heures à extraire.
+	  
+   4. Ajout de la prise en charge des noms Unicode stockés dans le champ supplémentaire de données ZIP.
+      Différents outils ZIP stockent des noms Unicode soit dans l'en-tête des fichiers soit dans le 
+	  champ supplémentaire ZIP. WinRAR peut désormais traiter correctement les deux types de noms Unicode.
+
+   5. L'option "Synchroniser le contenu de l'archive" et le commutateur de ligne de commande -as sont 
+      pris en charge dans le format ZIP.
+
+   6. Modifications appportées au comportement du commutateur -ag :
+   
+         a) -ag peut être utilisé avec toutes les commandes RAR et WinRAR, pas 
+		    seulement avec l'archivage ;
+		 b) le comportement du caractère de format "N" diffère dans les opérations 
+		    d'archivage et dans les autres opérations. Durant l'archivage, il est incrémenté 
+		    jusqu'à trouver le premier nom qui n'est pas utilisé. Lors des autres opérations 
+		    comme l'extraction, l'archive précédant le premier nom non-utilisé est sélectionnée ;
+		 c) Le caractère de format 'I' permet d'indiquer un nombre de minutes, sans tenir 
+		    compte de la présence et de la position de 'H' (heures) dans la chaîne de format.
+		    Il peut être utilisé à la place de 'M' (minutes), lorsque vous souhaitez placer 
+		    les minutes avant les heures, ou si les heures ne sont pas utiles.
+		 
+   7. Par défaut, WinRAR propose de mettre à jour une archive quand l'afficheur a modifié un fichier 
+      ouvert ou créé de nouveaux fichiers. La nouvelle option "Ignorer les modifications pour" dans 
+	  "Paramètres/Visionneuse" permet de désactiver ce comportement. Vous pouvez définir un ou 
+	  plusieurs masques de fichiers séparés par des espaces ici. WinRAR ne vous invitera plus à 
+	  actualiser les archives quand le fichier créé ou modifié par l'afficheur correspond à l'un de 
+	  ces masques.
+   
+   8. Changements dans le champ de saisie de taille des volumes. Vous pouvez désormais choisir 
+      des unités de taille dans le menu déroulant situé à droite du champ. La méthode consistant 
+	  à saisir 'k', 'm', etc. après les caractères numériques est également prise en charge.
+   
+   9. Changements dans "Formats prédéfinis", dans la boîte de dialogue "Définir la taille des 
+      volumes". Les disquettes et les disques ZIP sont remplacés par des volumes de 5 Mo et 100 Mo. 
+	  De nouvelles entrées ont été ajoutées pour la taille maximale du système FAT32 et pour les 
+	  disques Blu-ray.
+
+  10. Nouvelle option "Supprimer les fichiers définitivement quand le mot de passe est défini" 
+      sur la page "Options" de la boîte de dialogue d'archivage. 
+	  Si vous préférez toujours supprimer les fichiers chiffrés de façon sécurisée, vous pouvez 
+	  activer « Supprimer les fichiers définitivement quand le mot de passe est défini » dans 
+	  le profil de compression par défaut.
+	  
+  11. Nouvelle option "Supprimer les fichiers temporaires définitivement/Chiffrés uniquement" dans 
+      "Configuration/Sécurité". Elle permet d'utiliser un système de suppression plus lent et plus sûr 
+	  pour les fichiers temporaires extraits des archives et identifiés par WinRAR comme étant 
+	  chiffrés. La suppression rapide est utilisée pour tous les autres fichiers temporaires.
+
+  12. Modifications apportées à la commande "Convertir des archives" :
+  
+         a) il est désormais possible de convertir des archives chiffrées. 
+		    Auparavant, la commande "Convertir des archives" les ignorait. 
+			Toutefois, si vous préférez les ignorer, vous pouvez le faire en activant l'option 
+			"Ignorer les archives chiffrées" dans la boîte de dialogue "Convertir des archives".
+			L'exécution de la commande en mode silencieux permettra d'éviter tous les invites 
+			de mot de passe ;
+
+		 b) le type d'archive spéciale "rar2", spécifique des archives RAR 1.x et 2.x, a été supprimé.
+		    Maintenant le type d'archive rar contrôle la conversion de toutes les versions d'archives RAR.
+			Dans la mesure où la commande de conversion n'a plus besoin de vérifier la version d'archive 
+			RAR, la recherche initiale des archives est plus rapide. Le délai d'affichage de la boîte de 
+			dialogue "Convertir des archives" est donc plus court.
+			
+  13. Le nouveau commutateur -log[fmt][=nom] permet d'écrire des noms d'archives et de fichiers dans 
+      le fichier journal dans la commande d'archivage pour les formats RAR et ZIP et pour l'extraction, 
+	  la suppression et l'énumération dans les formats RAR. Ce commutateur est particulièrement utile 
+	  lorsque vous avez besoin de traiter une archive créée avec les commutateurs -ag ou -v. -log fournit 
+	  le nom d'archive généré par WinRAR.
+  
+  14. Le nouveau commutateur -@[+] permet de traiter tous les paramètres commençant par '@' comme des 
+      noms de fichier (-@) ou en tant que listes de fichiers (-@+).
+  
+  15. Les options SFX "Programme d'installation" ont été déplacées de la page "Général" à 
+      "Installation" dans la boîte de dialogue "Options SFX avancées". Les deux champs "Exécuter après 
+	  extraction" et "Exécuter avant extraction" sont maintenant sur plusieurs lignes. Il est ainsi 
+	  possible de définir plusieurs programmes d'installation dans une même archive SFX.
+
+  16. La commande de script SFX "SetupCode" indique à l'archive SFX d'attendre l'arrêt du programme 
+      d'installation. Elle renvoie le code de sortie du programme d'installation augmenté de 1000 
+	  en tant que code de sortie de l'exécutable SFX. L'équivalent de cette commande dans l'interface 
+	  graphique est l'option "Attendre et renvoyer le code de sortie" dans la page "Configuration" 
+	  de la boîte de dialogue "Options SFX avancées".
+  
+  17. SFX ne prend plus en charge le mode de commande de raccourci "S" (créer au niveau supérieur du 
+      Menu Démarrer). Les versions les plus récentes de Windows ne permettent pas à des programmes 
+	  d'ajouter des éléments dans la partie supérieure du menu Démarrer.
+  
+  18. La taille du volume dans les boîtes de dialogue d'archivage et d'assistant peut être définie 
+      sous forme de fraction décimale. Le marqueur de décimale est défini par paramètres régionaux 
+	  de Windows. 
+	  Le commutateur de ligne de commande -v<size> autorise également les fractions décimales. 
+	  En mode ligne de commande le point (.) est toujours utilisé en tant que marqueur de décimale. 
+	  Par exemple, le commutateur -v1.5g signifie 1,5 gigaoctets.
+
+   Version 4.01
+
+   1. Ajout de la prise en charge de l'affichage de la taille des fichiers 
+      dans les archives TAR au format binaire.
+      Certaines archives TAR utilisent le format binaire au lieu du format 
+      octal pour les fichiers de plus de 8 Go.
+   
+   2. Bogues résolus :
+
+      a) la commande "Réparer" ne reconstruisait pas correctement la structure
+         des archives RAR qui contenaient au moins un fichier dont la taille
+         compressée est supérieure à 4 Go.
+
+         Ce bogue n'affectait pas les réparations basées sur les 
+         enregistrements de restauration. IL se produisait uniquement
+         en l'absence de tout enregistrement de restauration, au moment où
+         WinRAR effectuait la reconstruction de la structure de l'archive ;
+
+      b) même si l'option "Ne pas extraire les chemins d'accès" de la
+         section "Avancé" de la boîte de dialogue d'extraction était activée
+         par défaut, WinRAR continuait à extraire les chemins d'accès des
+         fichiers lors de l'utilisation du menu contextuel de l'explorateur ;
+         
+      c) après la saisie d'un mot de passe erroné pour une archive ZIP chiffrée,
+         WinRAR ignorait parfois les tentatives suivantes ;
+
+      d) durant la compression d'un dossier unique ou d'un fichier sans
+         extension, la commande "Assistant" ne permettait pas de créer des
+         archives auto-extractibles et multivolumes ;
+
+      e) la commande "Importer la configuration depuis un fichier" ne permettait 
+         pas de restaurer les commentaires sur plusieurs lignes présents dans les 
+         profils de compression WinRAR ;
+
+      f) lors de la conversion de volumes RAR nommés nom1.nom2.partie#.rar,
+         la commande "Convertir des archives" supprimait ".nom2" du nom.
+         L'archive obtenue était nommée nom1.rar au lieu de nom1.nom2.rar;
+
+      g) RAR rencontrait parfois des erreurs lors de la création d'une nouvelle 
+         archive en utilisation le commutateur -agNNN dès lors que le nombre d'archives 
+         était supérieur ou égal à 110.
+
+      h) WinRAR ne parvenait pas à afficher correctement les noms dans une langue autre 
+         que l'anglais pour les archives 7-Zip utilisant une page de code autre que 
+         celle par défaut. Il ne s'agissait que d'un problème d'affichage. Les archives 
+         étaient décompressées correctement.
+
+
+   Version 4.00
+
+   1. La vitesse de décompression RAR a été améliorée. Selon le type de données,
+      elle peut être jusqu'à 30 % plus rapide qu'avec les versions précédentes.
+
+      L'algorithme RAR général et la méthode multimédia RAR 
+      bénéficient de cette amélioration. Le seul module de l'algorithme RAR
+      qui n'est pas concerné est la méthode "Compression de texte".
+   
+   2. Changements dans la prise en charge du format ISO :
+   
+      a) la prise en charge d'UDF a été mise à niveau vers la révision UDF 2.50. Il  
+         est ainsi possible de décompresser la plupart des fichiers ISO Blu-ray ;
+
+      b) dans les fichiers ISO UDF, le numéro de révision UDF est affiché
+         après le nom de format "UDF" dans la barre d'adresse de RAR
+         et dans la boîte de dialogue d'informations relatives à l'archive ;
+
+      c) WinRAR définit la date de modification des dossiers durant la décompression
+         de dossiers présents dans des fichiers UDF et ISO9660.
+   
+   3. Changements dans la boîte de dialogue des mots de passe :
+
+      a) WinRAR utilise la même boîte de dialogue de mot de passe pendant l'archivage
+         et l'extraction. L'option "Afficher le mot de passe" est donc également
+         disponible pendant l'extraction ;
+
+      b) Le bouton "Organiser les mots de passe..." de la boîte de dialogue permet
+         d'accéder à l'interface du gestionnaire de mots de passe. Cette dernière
+	 vous permet de définir les mots de passe utilisés régulièrement. Vous
+	 pourrez ainsi accéder à ces mots de passe par le biais d'une liste
+	 déroulante ou de la fonction de saisie automatique de la boîte de dialogue
+	 des mots de passe.
+
+         Gardez à l'esprit que les mots de passe enregistrés ne sont pas chiffrés.
+	 Quiconque disposant d'un accès à votre ordinateur peut les consulter.
+	 N'utilisez la fonctionnalité "Organiser les mots de passe" que si votre
+	 ordinateur est protégé contre l’accès non autorisés ;
+
+      c) L'option "Utiliser pour toutes les archives" est disponible dans la boîte
+	 de dialogue des mots de passe durant la décompression de plusieurs archives.
+	 Vous pouvez l'utiliser pour appliquer un mot de passe saisi à toutes les 
+	 archives
+
+         Si vous utilisez cette option avec un mot de passe vide, WinRAR ignore
+	 toutes les archives chiffrées.
+   
+   4. Dans Windows 7 WinRAR affiche également l'avancement de l'opération globale
+      sur l'icône WinRAR dans la barre des tâches de Windows. Vous pouvez désactiver
+      cette fonction à l'aide de l'option "Barre de progression de la barre des 
+      tâches" sur la page Général des paramètres de WinRAR.
+
+   5. De nombreuses améliorations de la prise en charge d'Unicode permettent de
+      traiter les noms de fichiers dans des langues autres que l'anglais.
+      Ces améliorations incluent :
+
+      a) une meilleure gestion d'Unicode dans WinRAR pour les commandes "Renommer",
+         "Convertir", "Rechercher" et autres, dans le volet d'arborescence,
+         dans la boîte de dialogue des mots de passe et encore d'autres 
+         endroits dans l'interface de WinRAR;
+
+      b) les noms Unicode sont affichés correctement dans les éléments de menu
+	 contextuel de WinRAR ;
+
+      c) la prise en charge d'Unicode dans les fichiers .lng, ce qui permet de
+	 localiser WinRAR dans les langues Unicode.
+   
+   6. Modifications dans la syntaxe du paramètre -x<file>. Vous pouvez maintenant
+      définir un masque d'exclusion des dossiers. Ce masque doit comporter un 
+      caractère de fin '\', ex. -x*tmp*\ ou -x*\temp\
+
+   7. La nouvelle option "Extraire les chemins relatifs" dans la section "Avancé"
+      de la boîte de dialogue d'extraction. Si vous parcourez certains sous-dossiers
+      d'une archive dans l'environnement WinRAR et que l'option "Extraire les
+      chemins relatifs", la partie du chemin à inclure, y compris celle du 
+      sous-dossier en cours, sera supprimée des chemins d'accès durant l'extraction.
+      
+      Par exemple, si vous vous trouvez dans le dossier d'archive "Backup\MyData"
+      et que vous extrayez le dossier "Images", il sera extrait sous "Images",
+      et non sous "Backup\MyData\Images".
+
+      Cette option est le nouveau mode d'extraction par défaut. Vous pouvez 
+      toutefois revenir au mode WinRAR 3.x. Sélectionnez simplement "Extraire 
+      les chemins complets" puis cliquez sur "Enregistrer les paramètres" dans 
+      la section "Général" de la boîte de dialogue d'extraction.
+   
+   8. Windows 98, Windows Me et Windows NT ne sont plus pris en charge par WinRAR
+      et les modules auto-extractibles WinRAR. La version minimale de Windows
+      requise par WinRAR 4.0 est Windows 2000.
+      
+      Pour exécuter WinRAR sur des versions antérieures de Windows, vous pouvez
+      télécharger les anciennes versions de WinRAR sur ftp://ftp.rarlab.com/rar
+
+   9. Lorsque des archives TAR, TAR.GZ ou TAR.BZ2 contiennent des liens symboliques
+      ou des liens physiques et si le système de fichiers de destination est NTFS,
+      WinRAR crée ces liens durant la décompression. WinRAR crée correctement les
+      liens symboliques et physiques dans Windows Vista et les versions ultérieures.
+      Pour les versions précédentes, tous les liens sont physiques.
+
+      Si le système de fichiers de destination est FAT32 ou autre ne prenant pas en
+      charge les liens de fichiers, WinRAR ignore les liens durant la décompression
+      des archives TAR, TAR.GZ et TAR.BZ2 archives.
+   
+  10. Le traitement du volume de restauration requiert moins d'opération de 
+      recherche sur le disque. Les performances sont donc améliorées.
+
+  11. Vous pouvez sélectionner une bibliothèque Windows 7 dans l'arborescence
+      de la boîte de dialogue de décompression. WinRAR utilisera cette valeur 
+      par défaut en tant que chemin d'accès de destination.
+
+  12. La commande "Rapport" permet de sélectionner HTML, texte Unicode et texte
+      standard en format de sortie. Contrairement aux versions précédentes de WinRAR,
+      les caractères Unicode sont préservés dans les rapports au format HTML ou 
+      texte Unicode. Les caractères de spéciaux seront donc affichés correctement
+      dans les rapports.
+   
+  13. La liste de messages de l'interface des archives SFX n'affiche que l'état
+      de l'opération et les messages d'erreur. Elle ne contient plus le nom de tous
+      les fichiers extraits. La vitesse est améliorée et l'utilisation de mémoire 
+      est réduite pour les archives SFX contenant un grand nombre de fichiers. 
+      Il est également plus facile de repérer les messages d'erreur du fait qu'il 
+      ne sont pas perdus parmi les noms de fichiers extraits.
+
+  14. Les archives SFX avec interface affichent le bouton "Extraire" au lieu
+      d"Installer" quand aucune commande "Setup" ou "Presetup" n'est incluse dans 
+      le commentaire de l'archive. Si vous préférez le bouton "Installer" mais que
+      vous ne souhaitez pas exécuter de programme d'installation, vous pouvez 
+      ajouter la commande "Setup=<>".
+  
+  15. Durant la réparation d'une archive contenant le volume de restauration,
+      et pendant le traitement des volumes de restauration, WinRAR affiche le
+      pourcentage actuel au-dessus de la barre de progression de l'opération.
+
+  16. Durant la création de volumes RAR sur un disque FAT ou FAT32, en mode de
+      détection automatique de taille des volumes, WinRAR limite la taille des
+      volumes à 4 Go moins 1 octet. Ces systèmes de fichiers ne prennent pas en
+      charge les fichiers de plus de 4 Go.
+
+  17. Si l'option "Attendre si une autre copie de WinRAR est encore active" est
+      activée et que WinRAR est en attente, vous pouvez cliquer sur le bouton
+      "Continuer" dans la fenêtre de progression de la commande pour interrompre
+      l'attente. Le bouton "Continuer" permet donc désormais d'ignorer l'option
+      "Attendre si une autre copie de WinRAR est encore active" pour l'opération
+      en cours.
+
+  18. Après modification d'un fichier chiffré dans un éditeur externe, WinRAR 
+      affiche une invite de mot de passe au lieu de deux durant l'enregistrement 
+      dans l'archive ZIP ou RAR d'origine. Les versions précédentes de WinRAR 
+      demandaient généralement de saisir le mot de passe deux fois (à l'extraction 
+      et durant l'archivage des modifications). Seules les archives RAR dont les 
+      noms étaient chiffrés étaient traitées avec un seul mot de passe.
+
+  19. Un nouveau code d'erreur 10 ("aucun fichier") a été ajouté à la liste des 
+      codes d'erreurs du mode de ligne de commande de RAR et WinRAR. Ce nouveau 
+      code peut être affiché par les commandes d'archivage, d'extraction, de
+      suppression et de réparation. Il signifie que RAR n'a trouvé aucun fichier
+      correspondant au masque de fichier ou d'archive défini.
+  
+  20. La zone du nom de fichier de la boîte de dialogue de remplacement occupe
+      désormais plusieurs lignes. Elle peut afficher des noms plus longs.
+
+  21. Le commutateur -ep3 ne se contente pas de convertir les lettres des
+      disques : il convertit également les chemins d'accès UNC.
+      \\server\share sera donc converti en __server\share durant l'archivage
+      et \\server\share sera restauré durant l'extraction avec -ep3.
+
+  22. La nouvelle option "Extraction en arrière-plan" de la section "Avancée"
+      de la boîte de dialogue d'extraction place WinRAR en arrière-plan durant
+      l'extraction des fichiers. Vous pouvez enregistrer son état par défaut 
+      à l'aide du bouton "Enregistrer les paramètres" de la section "Général"
+      de la boîte de dialogue d'extraction.
+
+      L'option "Archivage en arrière-plan" du profil de compression par défaut
+      n'affecte plus le comportement de l'extraction.
+
+  23. Le bouton "Mode..." de la fenêtre de progression des opérations est 
+      activé également durant l'extraction ou le test des archives. Il 
+      permet d'accéder à la boîte de dialogue "Paramètres de commande" 
+      où l'option "Arrêter le PC après l'opération" peut être définie pour 
+      les opérations d'extraction et de test.
+
+      Auparavant, cette boîte de dialogue n'était accessible que durant 
+      l'archivage.
+  
+  24. Bogues résolus :
+
+      a) le fait de renommer un fichier dans une archive pouvait entraîner la
+         modification de fichiers portant le même nom dans d'autres dossiers de 
+         l'archive ;
+
+      b) les versions précédentes affichaient une taille après compactage 
+         erronée dans la commande "Info" des archives CAB multivolume ;
+
+      c) dans les archives ZIP les commandes 'U' (actualiser) et 'F' (refaire)
+         pouvaient involontairement actualiser des fichiers, même lorsqu'ils
+         n'étaient pas indiqués dans la ligne de commande. Les fichiers du dossier
+         en cours dont les noms correspondaient à ceux d'une archive ZIP étaient 
+         les seuls concernés. Ce bogue était présent dans le mode d'archivage 
+         standard 'A' (ajouter).
+
+
+   Version 3.93
+
+   1. Bogues résolus :
+
+      a) Dans WinRAR 3.92, le paramètre -xd:\path\folder pouvait également exclure des dossiers
+         dont le chemin d'accès ne correspondait pas à celui défini dans le paramètre. Il suffisait
+         que le nom du dossier soit identique à celui indiqué ;
+      
+      b) Les paramètres -y et -or ne fonctionnaient pas correctement ensemble. Le paramètre -or
+         était ignoré en présence de -y.
+
+
+   Version 3.92
+
+   1. Si vous lancez la commande WinRAR depuis le menu contextuel de l'explorateur 
+      de fichiers dans une configuration comportant plusieurs moniteurs, la boîte de 
+      dialogue s'affiche sur le même écran que le menu contextuel. Dans les versions 
+      précédentes elle était toujours affichée sur le moniteur principal.
+
+   2. La commande du menu contextuel "Compresser et envoyer par e-mail..." de WinRAR 
+      permet d'ajouter le nom à l'objet du courrier électronique. Les versions précédentes 
+      le laissaient vierge.
+
+   3. Dans RAR 3.91, le paramètre -x<mask> pouvait également exclure les dossiers de 
+      l'archivage même lorsque le masque contenait des caractères génériques et ne 
+      contenait aucun chemin d'accès. Par exemple, -x*. excluait tous les dossiers dont 
+      le nom ne comportait pas d'extension. Désormais le paramètre -x utilise l'approche 
+      de RAR 3.80 pour les masques sans chemin d'accès, excluant les dossiers uniquement 
+      si le masque contient des caractères génériques et correspond au nom du dossier.
+
+   4. Bogues résolus :
+
+      a) WinRAR 3.91 affichait l'erreur "Fin de l'archive incorrecte" à l'ouverture 
+         d'archives ZIP vides créées à l'aide de la commande du menu contextuel 
+         "Nouvelle archive WinRAR ZIP" ;
+      b) lorsque l'option "Supprimer l'archive" était sélectionnée durant la décompression
+         de plusieurs archives ZIP et quand une des archives était endommagée, WinRAR 
+         ne supprimait pas les archives suivant celle endommagée, même lorsque la 
+         décompression s'était déroulée correctement ;
+      c) si un fichier correspondait à deux masques du fichier RarFiles.lst, WinRAR
+         ne pouvait pas sélectionner la dernière correspondance. Normalement, lorsqu'aucun
+         masque n'est un sous-ensemble d'un autre, la première correspondance est retenue.
+
+   Version 3.91
+
+   1. WinRAR peut rencontrer une erreur lors du test de fichiers CAB corrompus.
+
+   2. La Beta 1 présentant des problèmes avec certaines archives TAR.BZ2.
+
+   3. La barre de progression totale pourvait ne pas s'afficher correctement avec la commande "Convertir des archives"
+      dans la beta 1.
+
+   4. Les archives SFX définissaient une variable d'environnement "sfxcmd" erronée
+      lorsque le contrôle de compte utilisateur s'affichait durant la décompression.
+
+   Version 3.91 beta 1
+
+   1. Cette version peut décompresser des archives 7-Zip créées
+      à l'aide de l'agorithme LZMA2.
+
+   2. Un mot de passe est désormais exigé lors de la décompression depuis le menu
+      contextuel d'archives 7z contenant des noms de fichiers chiffrés. Auparavant,
+      WinRAR 3.90 le demandait deux fois.
+
+   3. Cette version peut décompresser des archives tar.bz2 composées de plusieurs
+      flux bz2 fusionnés. Les versions précédentes ne décompressaient
+      que le premier flux bz2 imbriqué des archives composites.
+
+   4. WinRAR affiche le CRC32 des fichiers d'archives .gz (pas .tar.gz)
+      inhabituelles. Les versions précédentes ignoraient ce champ pour les fichiers GZIP.
+
+   5. Bogues résolus :
+
+      a) WinRAR 3.90 affichait un bouton "Enregistrer" au lieu d'"Ouvrir" ou "OK"
+         dans la boîte de dialogue "Rechercher l'archive" (commande "Ouvrir une archive" du menu "Fichier"
+         et commande "Parcourir..." de la boîte de dialogue d'archivage) ;
+
+      b) WinRAR pouvait afficher des noms de fichiers erronés dans les
+         archives ZIP mal formées ;
+
+      c) WinRAR 3.90 ne pouvait pas décompresser les archives LZH créées à l'aide de
+         l'algorithme "-lh7-" ;
+
+      d) Dans certaines circonstances, WinRAR 3.90 ne pouvait pas supprimer une partie d'un fichier
+         après archivage, lorsque l'option "Déplacer les fichiers dans la corbeille" était activée.
+         Ce bogue était présent dans Windows XP, mais pas dans Windows Vista et Windows 7 ;
+
+      e) Lors de la décompression d'un fichier ISO à l'aide de la commande "Extraire les fichiers..."
+         dans le menu contextuel de l'explorateur de fichiers, WinRAR décompressait certains fichiers
+         deux fois. L'invite de remplacement était donc affiché la deuxième fois ;
+
+      f) La commande "Rechercher" de la recherche hexadecimale de WinRAR 3.90 et la commande RAR
+         "ih" ne trouvaient aucune correspondance lorsque le premier octet de la chaîne de recherche
+         était supérieur à 127.
+
+   Version 3.90
+
+   1. WinRAR est disponible en version Windows x64. Si vous utilisez
+      Windows x64, il est fortement recommandé d'installer WinRAR version
+      64 bit. Il offre de meilleures performance et une meilleure intégration
+      que la version 32 bit.
+
+   2. La vitesse de compression RAR a été améliorée pour les systèmes multi-cœur
+      et multi-processeur. Cette amélioration est plus flagrante
+      dans les systèmes d'exploitation Windows Vista et Windows 7.
+
+   3. L'option "Supprimer les dossiers en double du chemin d'extraction"
+      dans "Configuration/Compression" a été remplacée par l'option
+      "Supprimer les dossiers redondants du chemin d'extraction".
+      Cette option permet d'éliminer les dossiers redondants basés sur les noms d'archives
+      dans le chemin d'extraction lorsque vous utilisez la commande de
+      menu contextuel "Extraire vers CheminDestination\" et si le dossier racine
+      de l'archive ne contient qu'un dossier et aucun fichier.
+
+
+   4. Modifications dans la boîte de dialogue "Options et chemin d'extraction" :
+
+      a) Le bouton "Nouveau dossier" permet de créer un sous-dossier
+         dans le dossier sélectionné ;
+
+      b) La touche F2 permet de renommer un dossier sélectionné dans l'arborescence ;
+
+      c) La touche F5 permet d'actualiser le contenu de l'arborescence ;
+
+      d) La touche Suppr permet de supprimer un dossier de l'arborescence.
+
+   5. Si vous souhaitez afficher les secondes dans la liste des fichiers de l'environnement WinRAR, 
+      vous pouvez activer l'option "Afficher les secondes" dans "Paramètres/Liste de fichiers".
+
+   6. Le groupe d'options "Où chercher des archives SFX" dans
+      "Paramètres/Intégration/Eléments du menu contextuel" vous permet
+      de contrôler le traitement des archives SFX dans les menus contextuels.
+      Par exemple, si vous cliquez régulièrement avec le bouton droit sur des fichiers ".exe"
+      présents sur des lecteurs réseau lents, vous pouvez désactiver "Lecteurs réseau" afin de
+      réduire le délai d'affichage du menu contextuel.
+
+   7. Si vous triez les fichiers par nom dans la liste de fichiers de l'environnement WinRAR,
+      WinRAR utilisera le nouvel ordre de tri logique,
+      le même que dans l'explorateur Windows, en tenant compte des valeurs numériques
+      des chiffres. Les fichiers seront donc triés comme suit :
+      1.txt, 2.txt, 10.txt au lieu de 1.txt, 10.txt, 2.txt précédemment.
+      Ce nouveau comportement de tri est disponible dans Windows XP Service Pack 2
+      et versions ultérieures.
+   
+   8. Le raccourci Ctrl+W key permet de fermer la fenêtre principale de WinRAR
+      et la visionneuse. Le raccourci "Afficher comme du texte Windows"
+      dans la visionneuse WinRAR a été remplacé par Ctrl+I.
+   
+   9. Le nouveau paramètre de ligne de commande -r- permet de désactiver complètement la récursivité.
+      La commande 'rar a -r- arc nom_répertoire' n'ajoutera donc que le dossier
+      nom_répertoire vide et ignorera son contenu. Par défaut, si nom_répertoire
+      ne comprend pas de joker, RAR ajoute son contenu même si le paramètre
+      -r n' pas été défini.
+
+  10. Lorsqu'il est utilisé pendant l'extraction, le paramètre de ligne de commande -ai force
+      RAR à ignorer les attributs des fichiers. Lorsque vous utilisez ce paramètre,
+      les fichiers extraits recevront les attributs appliqués par défaut par le système d'exploitation
+      à tous les nouveaux fichiers.
+
+  11. Si aucun nom de fichier de sortie n'est précisé dans la commande "cw", la console RAR
+      enverra des données de commentaire à stdout.
+
+  12. Durant la compression des données stdin avec le paramètre -si[nom], RAR définit l'heure de 
+      modification de l'entrée archivée en fonction de l'heure système actuelle.
+      Les versions précédentes de RAR laissaient ce champ vide, ce qui se traduisait
+      par une heure de modification erronée pour stdin.
+
+  13. Le message affiché lorsque vous positionnez le curseur de votre souris sur
+      l'icône WinRAR dans la zone de notification de la barre des tâches comprend désormais le nom de l'archive.
+      Jusqu'à présent, seules les informations de temps restant et de progression étaient affichées
+      durant les opérations d'extraction.
+
+  14. Une nouvelle variable 'Shutdown' dans la clé de Registre 
+      'Software\WinRAR\Policy' permet de désactiver l'option
+      "Arrêter le PC à la fin" pour des raisons de sécurité.
+      Pour plus de détails, reportez-vous à la section "Paramètres
+      de configuration/Variables du Registre".
+
+  15. Améliorations supplémentaires au niveau de performance de l'extension d'environnement. Désormais,
+      le menu contextuel de WinRAR est plus réactif lorsque plusieurs milliers de fichiers sont sélectionnés.
+
+  16. Compatibilité améliorée avec le mode d'affichage haute définition Windows.
+
+  17. Bogues corrigés :
+
+      a) WinRAR était parfois incapable d'ouvrir des archives tar ou tar.gz lorsque ces archives
+         contenaient un fichier d'une taille supérieure à 8 Go ;
+      
+      b) Le menu contextuel de WinRAR ne fonctionnait pas correctement dans Windows 7 beta
+         si les icônes des menus contextuels étaient activées et que l'utilisateur cliquait
+         su un fichier dans un dossier de bibliothèque Windows 7 ;
+  
+      c) Les version précédentes de WinRAR étaient incapables de renommer des fichiers comportant plus de 5
+         espaces consécutifs. L'environnement de WinRAR n'affiche
+         pas ces espaces pour des raisons de sécurité : ils pourraient cacher
+         l'extension d'un fichier. Cette mesure de sécurité n'empêchait pas
+         de renommer le fichier.
