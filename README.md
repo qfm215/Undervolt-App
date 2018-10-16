@@ -1,5 +1,5 @@
 # Undervolt-App
-little app to undervolt cpu with XTU
+little app to undervolt intel cpu with XTU (reduce temperatures and increase performances on laptops)
 
 # Installation
 simply run install.exe
